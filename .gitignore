@@ -25,7 +25,6 @@ lib64
 __pycache__/
 share/
 pyvenv.cfg
-config.py
 
 # Coverage reports
 htmlcov/
