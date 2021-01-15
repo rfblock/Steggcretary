@@ -1,0 +1,54 @@
+{
+	"reminders": [
+		{
+			"time": "12:00",
+			"text": "Ask Adrian if he's a furry (Day %r)",
+			"repeat": "everyday",
+			"%r": "79"
+		}
+	],
+	"forward": {
+		"whitelist-channels": [
+			"stegg", "steggys-stupid-ideas", "the-insanity-of-eleeza"
+		],
+		"blacklist-users": [
+			"U01ARQ7M5UL"
+		],
+		"moderators": [
+			"US76MM0LB"
+		],
+		"maximum": 3
+	},
+	"pfp": {
+		"moderators": [
+			"US76MM0LB"
+		],
+		"picture-directory": "static/pfp/",
+		"data-pairs": {
+			"pizza": "pizza",
+			"ramen": "soup",
+			"steggo": "steggy",
+			"steggy:": "steggy",
+			"sleeping": "sleepy"
+		}
+	},
+	"github": {
+		"repo": "github.com/"
+	},
+	"moderator": {
+		"moderators": [
+			"US76MM0LB"
+		],
+		"channels": {
+			"steggy-stupid-ideas": {
+				"threaded": true
+			},
+			"stegg": {
+				"threaded": false
+			}
+		},
+		"ban-list": [
+			"U01ARQ7M5UL"
+		]
+	}
+}
