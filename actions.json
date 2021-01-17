@@ -2,12 +2,23 @@
 	"reminders": [
 		{
 			"time": "12:00",
-			"text": "Ask Adrian if he's a furry (Day %r)",
+			"text": "Ask Adrian if he's a furry (Day {0})",
 			"repeat": "everyday",
-			"%r": "79"
+			"{0}": "79"
 		}
 	],
-	"forward": {
+	"forwarder": {
+		"trigger": "tallyho",
+		"messages": [
+			"Hey <@UL7RXU3UJ>, some nerd named {0} wants you to see this",
+			"<@UL7RXU3UJ>, {0} would like you to see this",
+			"Dear {0}, your message has been forwarded to <@UL7RXU3UJ>",
+			"{0}, I have forwarded this to <@UL7RXU3UJ>",
+			"{0}, if you really want, I can send this to <@UL7RXU3UJ>",
+			"<@UL7RXU3UJ>'s rather busy, but I can send it to him for you, {0}",
+			"Something tells me that it's not a good idea to notify <@UL7RXU3UJ> of this. But if you insist, {0}, I will",
+			"no"
+		],
 		"whitelist-channels": [
 			"stegg", "steggys-stupid-ideas", "the-insanity-of-eleeza"
 		],
@@ -15,13 +26,12 @@
 			"U01ARQ7M5UL"
 		],
 		"moderators": [
-			"US76MM0LB"
-		],
-		"maximum": 3
+			"UL7RXU3UJ"
+		]
 	},
 	"pfp": {
 		"moderators": [
-			"US76MM0LB"
+			"UL7RXU3UJ"
 		],
 		"picture-directory": "static/pfp/",
 		"data-pairs": {
@@ -37,7 +47,7 @@
 	},
 	"moderator": {
 		"moderators": [
-			"US76MM0LB"
+			"UL7RXU3UJ"
 		],
 		"channels": {
 			"steggy-stupid-ideas": {

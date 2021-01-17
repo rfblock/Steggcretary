@@ -1,25 +1,23 @@
 import config
 import requests
 import json
-
+import random
+from modules import actions
+from modules.slack import chat, conversations
 def __get_replies(channel, ts):
-    #(Parent thread) Get thread list, (Thread item) Get thread item
-    return json.loads(requests.get('https://slack.com/api/conversations.replies', params={
-            'channel': channel,
-            'ts': ts
-        }, headers={
-            'Authorization': f'Bearer {config.SLACK_TOKEN}'
-        }).content.decode('utf-8'))['messages']
+    return conversations.replies(channel=channel, ts=ts)['messages']
 
 def forwarder(data):
+    user = data['event']['user']
     reaction = data['event']['reaction']
     channel = data['event']['item']['channel']
     ts = data['event']['item']['ts']
 
-
-    if data['event']['reaction'] == 'tallyho':
+    if reaction == actions.forwarder['trigger']:
         replies = __get_replies(channel, ts)
 
+        #If thread item, get parent thread
+        #When you request the ts of a thread item, slack only returns the single message, so you have to do this horribleness
         parent_ts = ts
         if 'thread_ts' in replies[0]:
             parent_ts = replies[0]['thread_ts']
@@ -29,12 +27,7 @@ def forwarder(data):
         if [x for x in replies if x['user'] == config.BOT_UID] or len(replies) >= 50:
             return '200'
 
+        message = random.choice(actions.forwarder['messages']).format(f'<@{user}>')
 
-        requests.post('https://slack.com/api/chat.postMessage', data={
-            'channel': channel,
-            'text': 'you called?',
-            'thread_ts': parent_ts
-        }, headers={
-            'Authorization': f'Bearer {config.SLACK_TOKEN}'
-        })
+        chat.postMessage(channel=channel, text=message, thread_ts=parent_ts)
     return '200'
