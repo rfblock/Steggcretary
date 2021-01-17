@@ -10,7 +10,7 @@ app.config.from_object('config')
 def events_api():
 	### URL Verification for Events API ###
 	if request.json['type'] == 'url_verification':
-		return data
+		return request.json
 
 	#TODO: ADD Reminders
 	#TODO: ADD PFP changer
@@ -19,6 +19,6 @@ def events_api():
 	return {
 		'reaction_added': forwarder.forwarder
 	}[request.json['event']['type']](request.json)
-	
+
 if __name__ == '__main__':
 	app.run(port=8080)
