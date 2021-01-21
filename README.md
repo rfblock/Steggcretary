@@ -20,3 +20,4 @@ Things `Steggcretary` can do right now:
 - [ ] Change PFP based on status
 - [ ] Show github notifications
 - [ ] Moderate channels
+
