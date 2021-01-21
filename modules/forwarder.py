@@ -1,5 +1,4 @@
 import config
-import requests
 import json
 import random
 from modules import actions
@@ -25,9 +24,9 @@ def forwarder(data):
 
         #If bot user found OR total messages ≥ 50
         if [x for x in replies if x['user'] == config.BOT_UID] or len(replies) >= 50:
-            return '200'
+            return 'OK', 200
 
         message = random.choice(actions.forwarder['messages']).format(f'<@{user}>')
 
         chat.postMessage(channel=channel, text=message, thread_ts=parent_ts)
-    return '200'
+    return 'OK', 200

@@ -43,7 +43,13 @@
 		}
 	},
 	"github": {
-		"repo": "github.com/"
+		"repo": "rfblock/Steggcretary",
+		"channel": "bot-spam",
+		"deployed": "#28a745",
+		"commit": "#24292f",
+		"merged": "#6f42c1",
+		"closed": "#cb2431",
+		"draft": "#6a737d"
 	},
 	"moderator": {
 		"moderators": [
