@@ -4,7 +4,7 @@ import schedule
 import hmac
 import hashlib
 import config
-from modules import forwarder, github
+from modules import commands, forwarder, github
 from modules.slack import chat
 
 app = Flask(__name__)
@@ -12,17 +12,18 @@ app.config.from_object('config')
 
 @app.route('/slack/events', methods=['POST'])
 def events_api():
-	### URL Verification for Events API ###
+	# URL Verification for Events API
 	request_data = request.get_json()
 	if request_data['type'] == 'url_verification':
 		return request_data
 	return {
-		'reaction_added': forwarder.forwarder
+		'reaction_added': forwarder.forwarder,
+		'app_mention': commands.parse_command
 	}[request_data['event']['type']](request_data)
 
 @app.route('/github/events', methods=['POST'])
 def github_api():
-	
+
 	signature = request.headers.get('X-Hub-Signature')
 	if not signature or not signature.startswith('sha1='):
 		abort(400, 'X-Hub-Signature required')

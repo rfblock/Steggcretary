@@ -4,6 +4,7 @@ import os
 with open(config.ACTIONS_PATH) as f:
 	actions_json = json.load(f)
 
+commands = actions_json['commands']
 reminders = actions_json['reminders']
 forwarder = actions_json['forwarder']
 pfp = actions_json['pfp']

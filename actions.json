@@ -1,4 +1,155 @@
 {
+	"commands": {
+		"base_regex": "(?i)<@{0}>.+?{1}",
+		"thread": false,
+		"users": {
+			"UL7RXU3UJ": {
+				"name": "Steggy",
+				"rate_bypass": true,
+				"command_refresh": true
+			}
+		},
+		"rate_limit": {
+			"C0P5NE354": {
+				"channel": "bot-spam",
+				"limit": 1
+			},
+			"C0266FRGV": {
+				"channel": "lounge",
+				"limit": 3600
+			},
+			"C014NMUG013": {
+				"channel": "stegg",
+				"limit": 30
+			},
+			"C141CCD2Q": {
+				"channel": "spam",
+				"limit": 1
+			},
+			"G*": {
+				"channel": "all private",
+				"limit": 1
+			},
+			"*": {
+				"channel": "all",
+				"limit": -1
+			}
+		},
+		"commands": {
+			"help": {
+				"help": [
+					"help",
+					"Shows this menu",
+					"Only shows commands that you can run",
+					"confused dino",
+					"https://raw.githubusercontent.com/hackclub/dinosaurs/main/confused_dinosaur.png"
+				],
+				"header": {
+					"type": "section",
+					"text": {
+						"type": "mrkdwn",
+						"text": "I heard you need help,\nHere is a list of @ commands you can run:"
+					}
+				},
+				"divide": {
+					"type": "divider"
+				},
+				"template": {
+					"type": "section",
+					"text": {
+						"type": "mrkdwn",
+						"text": "*{0}*\n{1}\n{2}"
+					},
+					"accessory": {
+						"type": "image",
+						"image_url": "",
+						"alt_text": ""
+					}
+				},
+				"footer": {
+					"type": "context",
+					"elements": [
+						{
+							"type": "plain_text",
+							"text": "You can put the command anywhere after the @.\nCommands are never case sensitive",
+							"emoji": true
+						}
+					]
+				}
+			},
+			"admin": {
+				"help": [
+					"admin wen?",
+					"check to see if steggcretary has admin yet",
+					"or just ask caleb",
+					"in xoxp we trust",
+					"https://i.imgur.com/sWNkeoR.png"
+				],
+				"message": [
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "not yet"
+						}
+					}
+				]
+			},
+			"hello": {
+				"help": [
+					"hello",
+					"Steggcretary says hi! :wave:",
+					"",
+					"dino wave",
+					"https://raw.githubusercontent.com/hackclub/dinosaurs/main/dinosaur_waving.png"
+				],
+				"pattern": "(?i)(<@{0}>.+?(what's up|hello|howdy|hey|hi|hewwo)|(what's up|hello|howdy|hey|hi|hewwo).+?<@{0}>)",
+				"names": [
+					"wave",
+					"dinosaur_waving"
+				]
+			},
+			"is steg.+? a fur": {
+				"help": [
+					"is stegg a furry?",
+					"is he? is he not?",
+					"only one way to find out",
+					"bm8gaGUncyBub3QgeW91IGJ1bWJsaW5nIGlkaW90Lg==",
+					"https://i.imgur.com/D6rjFBc.png"
+				],
+				"message": [
+					{
+						"type": "section",
+						"text": {
+							"type": "mrkdwn",
+							"text": "May I direct you to <http://issteg.ga/furry?|Is Stegg a furry?>"
+						}
+					}
+				]
+			},
+			"pretzel": {
+				"help": [
+					"pretzel",
+					"shows pretzel boi",
+					"that's it",
+					"pretzel boi",
+					"https://i.imgur.com/QucYSl8.png"
+				],
+				"message": [
+					{
+						"type": "image",
+						"title": {
+							"type": "plain_text",
+							"text": "pretzel boi",
+							"emoji": true
+						},
+						"image_url": "https://i.imgur.com/QucYSl8.png",
+						"alt_text": "marg"
+					}
+				]
+			}
+		}
+	},
 	"reminders": [
 		{
 			"time": "12:00",

@@ -17,10 +17,10 @@ def forwarder(data):
 
         #If thread item, get parent thread
         #When you request the ts of a thread item, slack only returns the single message, so you have to do this horribleness
-        parent_ts = ts
+        thread_ts = ts
         if 'thread_ts' in replies[0]:
-            parent_ts = replies[0]['thread_ts']
-            replies = __get_replies(channel, parent_ts)
+            thread_ts = replies[0]['thread_ts']
+            replies = __get_replies(channel, thread_ts)
 
         #If bot user found OR total messages ≥ 50
         if [x for x in replies if x['user'] == config.BOT_UID] or len(replies) >= 50:
@@ -28,5 +28,5 @@ def forwarder(data):
 
         message = random.choice(actions.forwarder['messages']).format(f'<@{user}>')
 
-        chat.postMessage(channel=channel, text=message, thread_ts=parent_ts)
+        chat.postMessage(channel=channel, text=message, thread_ts=thread_ts)
     return 'OK', 200
